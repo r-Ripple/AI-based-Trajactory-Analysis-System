@@ -1,0 +1,48 @@
+# Trajectory Data AI Analysis System Configuration File (Fixed Version)
+# config.yaml
+
+# API Configuration
+api:
+  api_key:  # Read from environment variable
+  model_name: GPT-5    # ✅ Based on official documentation, the correct bot name
+  # Other officially supported bot names:
+  # - "GPT-5"              # OpenAI GPT-5 (Recommended)
+  # - "Claude-Sonnet-4.5"  # Anthropic Claude 4.5 (Latest)
+  # - "GPT-4o"             # OpenAI GPT-4o
+  # - "Claude-3-Opus"      # Anthropic Claude 3 Opus
+  # - "ChatGPT"            # OpenAI ChatGPT
+  max_tokens: 100000
+  temperature: 0.8
+
+# Analysis Configuration
+analysis:
+  types:
+    - "temporal_comparative" 
+    - "spatial_differential"  
+    - "spatiotemporal_transitions"  
+    - "cross_feature_insights"  
+    - "anomaly_explanatory"  
+    - "meta_synthesis"
+  
+  # Analysis Depth
+  max_users: null          # Limit the number of users to analyze, null means no limit
+  include_details: true    # Whether to include detailed analysis
+  generate_visualizations: false  # Whether to generate visualization suggestions
+
+# Output Configuration  
+output:
+  format: "json"           # Output format: json, markdown, html
+  save_raw_responses: true # Whether to save raw AI responses
+  create_summary: true     # Whether to create a summary report
+
+# Data Processing Configuration
+data:
+  max_stays_per_user: 50   # Maximum number of stay points per user
+  max_trips_per_user: 50   # Maximum number of trips per user
+  min_stay_duration_s: 300 # Minimum stay duration (seconds)
+  
+# Privacy Protection Configuration
+privacy:
+  anonymize_locations: false    # Whether to anonymize specific locations
+  mask_sensitive_pois: false    # Whether to mask sensitive POIs
+  remove_personal_info: true    # Whether to remove inferred personal information
